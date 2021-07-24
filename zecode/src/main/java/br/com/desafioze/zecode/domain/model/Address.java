@@ -2,10 +2,7 @@ package br.com.desafioze.zecode.domain.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
@@ -14,7 +11,10 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_address")
     private Long id;
     private String type;
-    private List<Double> cordinates;
+
+//    @OneToMany
+//    private List<Double> cordinates;
 }
