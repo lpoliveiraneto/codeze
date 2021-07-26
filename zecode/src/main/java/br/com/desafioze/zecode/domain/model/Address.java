@@ -14,7 +14,7 @@ public class Address {
     @Column(name = "id_address")
     private Long id;
     private String type;
+    private Double lat;
+    private Double lng;
 
-//    @OneToMany
-//    private List<Double> cordinates;
 }

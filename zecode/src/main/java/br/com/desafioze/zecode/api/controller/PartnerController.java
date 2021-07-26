@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Part;
 
 @RestController
 @RequestMapping("/partners")
@@ -16,8 +15,16 @@ public class PartnerController {
     private PartnerRegistrationService partnerRegistration;
 
     @PostMapping
- //   @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.CREATED)
     public Partner registration( @RequestBody Partner partner){
         return partnerRegistration.save(partner);
     }
+
+    @GetMapping("/{id}")
+    public Partner partnerFindById(@PathVariable Long id){
+
+        return partnerRegistration.searchId(id);
+    }
+
+
 }
