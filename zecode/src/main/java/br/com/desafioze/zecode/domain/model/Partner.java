@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 @Data
 @Entity
-@AllArgsConstructor
+
 public class Partner implements Serializable {
 
     @Id
@@ -28,7 +28,7 @@ public class Partner implements Serializable {
     private Long id;
 
     @Column(nullable = false)
-    private String trandingName;
+    private String tradingName;
 
     @Column(nullable = false)
     private String ownerName;
