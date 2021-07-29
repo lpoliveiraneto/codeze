@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 
 @RestController
-@RequestMapping("/partners")
+@RequestMapping("api/v1/partners")
 public class PartnerController {
 
     @Autowired
@@ -22,7 +24,7 @@ public class PartnerController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public PartnerModel registration( @RequestBody PartnerInput partnerInput){
+    public PartnerModel registration( @Valid @RequestBody PartnerInput partnerInput){
         Partner partner = toEntity(partnerInput);
 
         return toModel(partnerRegistration.save(partner));
